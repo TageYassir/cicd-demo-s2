@@ -40,7 +40,7 @@ jobs:
       - name: Verify TTC Calculation
         run: |
           set -o pipefail
-          curl -fsS 'http://127.0.0' | grep -F '"prixTTC":120'
+          curl -fsS 'http://127.0.0.1:3000/api/calcul/ttc?prix=100&tva=20' | grep -F '"prixTTC":120'
 
       - name: Nettoyer
         if: always()
